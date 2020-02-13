@@ -1,0 +1,17 @@
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\bin\Debug\wpfSolarSystem.exe.config
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\bin\Debug\wpfSolarSystem.exe
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\bin\Debug\wpfSolarSystem.pdb
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\bin\Debug\spaceObject.dll
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\bin\Debug\spaceObject.pdb
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\wpfSolarSystem.csprojAssemblyReference.cache
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\MainWindow.g.cs
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\App.g.cs
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\wpfSolarSystem_MarkupCompile.cache
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\wpfSolarSystem_MarkupCompile.lref
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\MainWindow.baml
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\wpfSolarSystem.g.resources
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\wpfSolarSystem.Properties.Resources.resources
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\wpfSolarSystem.csproj.GenerateResource.cache
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\wpfSolarSystem.csproj.CopyComplete
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\wpfSolarSystem.exe
+C:\Users\torke\source\repos\solsystemet\wpfSolarSystem\obj\Debug\wpfSolarSystem.pdb

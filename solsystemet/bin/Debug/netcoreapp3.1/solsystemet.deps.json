@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "solsystemet/1.0.0": {
+        "dependencies": {
+          "spaceObject": "1.0.0"
+        },
+        "runtime": {
+          "solsystemet.dll": {}
+        }
+      },
+      "spaceObject/1.0.0": {
+        "runtime": {
+          "spaceObject.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "solsystemet/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "spaceObject/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

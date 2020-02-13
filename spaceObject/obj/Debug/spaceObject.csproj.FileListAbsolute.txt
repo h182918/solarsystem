@@ -1,0 +1,5 @@
+C:\Users\torke\source\repos\solsystemet\spaceObject\bin\Debug\spaceObject.dll
+C:\Users\torke\source\repos\solsystemet\spaceObject\bin\Debug\spaceObject.pdb
+C:\Users\torke\source\repos\solsystemet\spaceObject\obj\Debug\spaceObject.csprojAssemblyReference.cache
+C:\Users\torke\source\repos\solsystemet\spaceObject\obj\Debug\spaceObject.dll
+C:\Users\torke\source\repos\solsystemet\spaceObject\obj\Debug\spaceObject.pdb

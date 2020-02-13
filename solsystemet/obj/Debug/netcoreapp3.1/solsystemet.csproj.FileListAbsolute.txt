@@ -1,0 +1,14 @@
+C:\Users\torke\source\repos\solsystemet\solsystemet\bin\Debug\netcoreapp3.1\solsystemet.exe
+C:\Users\torke\source\repos\solsystemet\solsystemet\bin\Debug\netcoreapp3.1\solsystemet.deps.json
+C:\Users\torke\source\repos\solsystemet\solsystemet\bin\Debug\netcoreapp3.1\solsystemet.runtimeconfig.json
+C:\Users\torke\source\repos\solsystemet\solsystemet\bin\Debug\netcoreapp3.1\solsystemet.runtimeconfig.dev.json
+C:\Users\torke\source\repos\solsystemet\solsystemet\bin\Debug\netcoreapp3.1\solsystemet.dll
+C:\Users\torke\source\repos\solsystemet\solsystemet\bin\Debug\netcoreapp3.1\solsystemet.pdb
+C:\Users\torke\source\repos\solsystemet\solsystemet\obj\Debug\netcoreapp3.1\solsystemet.csprojAssemblyReference.cache
+C:\Users\torke\source\repos\solsystemet\solsystemet\obj\Debug\netcoreapp3.1\solsystemet.AssemblyInfoInputs.cache
+C:\Users\torke\source\repos\solsystemet\solsystemet\obj\Debug\netcoreapp3.1\solsystemet.AssemblyInfo.cs
+C:\Users\torke\source\repos\solsystemet\solsystemet\obj\Debug\netcoreapp3.1\solsystemet.dll
+C:\Users\torke\source\repos\solsystemet\solsystemet\obj\Debug\netcoreapp3.1\solsystemet.pdb
+C:\Users\torke\source\repos\solsystemet\solsystemet\bin\Debug\netcoreapp3.1\spaceObject.dll
+C:\Users\torke\source\repos\solsystemet\solsystemet\bin\Debug\netcoreapp3.1\spaceObject.pdb
+C:\Users\torke\source\repos\solsystemet\solsystemet\obj\Debug\netcoreapp3.1\solsystemet.csproj.CopyComplete
