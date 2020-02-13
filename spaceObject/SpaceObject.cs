@@ -27,9 +27,13 @@ namespace SpaceSim
 
         public void calcPos(int time)
         {
-            double orbitalSpeed = (2 * Math.PI * orbitalRadius) / orbitalPeriod;
-            xpos = orbitalRadius + (Math.Cos(time * orbitalSpeed * 3.1416 / 180) * orbitalRadius);
-            ypos = orbitalRadius + (Math.Sin(time * orbitalSpeed * 3.1416 / 180) * orbitalRadius);
+            if (!(this is Star))
+            {
+                double orbitalSpeed = (2 * Math.PI * orbitalRadius) / orbitalPeriod;
+                xpos = orbitalRadius + (Math.Cos(time * orbitalSpeed * 3.1416 / 180) * orbitalRadius);
+                ypos = orbitalRadius + (Math.Sin(time * orbitalSpeed * 3.1416 / 180) * orbitalRadius);
+            }
+
         }
 
     }
@@ -41,8 +45,8 @@ namespace SpaceSim
             objectRadius = radius;
             rotationalPeriod = rotPeriod;
             this.color = color;
-            xpos = 0;
-            ypos = 0;
+            xpos = 200;
+            ypos = 200;
             children = new List<SpaceObject>();
         }
         public override void Draw()
@@ -164,7 +168,8 @@ namespace SpaceSim
         
 
         public allSpaceObjects() {
-            objectList.Add(new Star("Sun", 50, 0, "RED"));
+            objectList.Add(new Star("Sun", 50, 0, "YELLOW"));
+            objectList.Add(new Planet("Earth", 15, 2, "BLUE", 149600, 365, objectList[0]));
         }
 
         public void allPlanets() {
@@ -176,7 +181,7 @@ namespace SpaceSim
             objectList.Add(new Planet("Saturn", 10, 500, "BROWN", 1429400, 10759, objectList[0]));
             objectList.Add(new Planet("Uranus", 10, 500, "GREEN", 2870990, 30685, objectList[0]));
             objectList.Add(new Planet("Neptune", 10, 500, "BLUE", 4504300, 60190, objectList[0]));
-            objectList.Add(new DwarfPlanet("Pluto", 10, 500, "GREY", 5913520, 90550, objectList[0]));
+            objectList.Add(new DwarfPlanet("Pluto", 10, 500, "GRAY", 5913520, 90550, objectList[0]));
         }
 
         public void allMoons()
@@ -186,85 +191,85 @@ namespace SpaceSim
                 switch (current.name)
                 {
                     case "Earth":
-                        current.children.Add(new Moon("Moon", 1, 0, "GREY", 384, 27, current));
+                        current.children.Add(new Moon("Moon", 10, 0, "GRAY", 384, 27, current));
                         break;
                     case "Mars":
-                        current.children.Add(new Moon("Phobos", 1, 0, "GREY", 9, 1, current));
-                        current.children.Add(new Moon("Deimos", 1, 0, "GREY", 23, 46023, current));
+                        current.children.Add(new Moon("Phobos", 1, 0, "GRAY", 9, 1, current));
+                        current.children.Add(new Moon("Deimos", 1, 0, "GRAY", 23, 46023, current));
                         break;
                     case "Jupiter":
-                        current.children.Add(new Moon("Metis", 1, 0, "GREY", 128, 1, current));
-                        current.children.Add(new Moon("Adrastea", 1, 0, "GREY", 129, 1, current));
-                        current.children.Add(new Moon("Amalthea", 1, 0, "GREY", 181, 1, current));
-                        current.children.Add(new Moon("Thebe", 1, 0, "GREY", 222, 1, current));
-                        current.children.Add(new Moon("Io", 1, 0, "GREY", 422, 28126, current));
-                        current.children.Add(new Moon("Europa", 1, 0, "GREY", 671, 20149, current));
-                        current.children.Add(new Moon("Ganymede", 1, 0, "GREY", 1070, 42186, current));
-                        current.children.Add(new Moon("Callisto", 1, 0, "GREY", 1883, 16, current));
-                        current.children.Add(new Moon("Leda", 1, 0, "GREY", 11094, 238, current));
-                        current.children.Add(new Moon("Himalia", 1, 0, "GREY", 11480, 250, current));
-                        current.children.Add(new Moon("Lysithea", 1, 0, "GREY", 11720, 259, current));
-                        current.children.Add(new Moon("Elara", 1, 0, "GREY", 11737, 259, current));
-                        current.children.Add(new Moon("Ananke", 1, 0, "GREY", 21200, -631, current));
-                        current.children.Add(new Moon("Carme", 1, 0, "GREY", 22600, -692, current));
-                        current.children.Add(new Moon("Pasiphae", 1, 0, "GREY", 23500, -735, current));
-                        current.children.Add(new Moon("Sinope", 1, 0, "GREY", 23700, -758, current));
+                        current.children.Add(new Moon("Metis", 1, 0, "GRAY", 128, 1, current));
+                        current.children.Add(new Moon("Adrastea", 1, 0, "GRAY", 129, 1, current));
+                        current.children.Add(new Moon("Amalthea", 1, 0, "GRAY", 181, 1, current));
+                        current.children.Add(new Moon("Thebe", 1, 0, "GRAY", 222, 1, current));
+                        current.children.Add(new Moon("Io", 1, 0, "GRAY", 422, 28126, current));
+                        current.children.Add(new Moon("Europa", 1, 0, "GRAY", 671, 20149, current));
+                        current.children.Add(new Moon("Ganymede", 1, 0, "GRAY", 1070, 42186, current));
+                        current.children.Add(new Moon("Callisto", 1, 0, "GRAY", 1883, 16, current));
+                        current.children.Add(new Moon("Leda", 1, 0, "GRAY", 11094, 238, current));
+                        current.children.Add(new Moon("Himalia", 1, 0, "GRAY", 11480, 250, current));
+                        current.children.Add(new Moon("Lysithea", 1, 0, "GRAY", 11720, 259, current));
+                        current.children.Add(new Moon("Elara", 1, 0, "GRAY", 11737, 259, current));
+                        current.children.Add(new Moon("Ananke", 1, 0, "GRAY", 21200, -631, current));
+                        current.children.Add(new Moon("Carme", 1, 0, "GRAY", 22600, -692, current));
+                        current.children.Add(new Moon("Pasiphae", 1, 0, "GRAY", 23500, -735, current));
+                        current.children.Add(new Moon("Sinope", 1, 0, "GRAY", 23700, -758, current));
                         break;
                     case "Saturn":
-                        current.children.Add(new Moon("Pan", 1, 0, "GREY", 134, 1, current));
-                        current.children.Add(new Moon("Atlas", 1, 0, "GREY", 138, 1, current));
-                        current.children.Add(new Moon("Prometheus", 1, 0, "GREY", 139, 1, current));
-                        current.children.Add(new Moon("Pandora", 1, 0, "GREY", 142, 1, current));
-                        current.children.Add(new Moon("Epimetheus", 1, 0, "GREY", 151, 1, current));
-                        current.children.Add(new Moon("Janus", 1, 0, "GREY", 151, 1, current));
-                        current.children.Add(new Moon("Mimas", 1, 0, "GREY", 186, 1, current));
-                        current.children.Add(new Moon("Enceladus", 1, 0, "GREY", 238, 13516, current));
-                        current.children.Add(new Moon("Moon", 1, 0, "GREY", 295, 32509, current));
-                        current.children.Add(new Moon("Telesto", 1, 0, "GREY", 295, 32509, current));
-                        current.children.Add(new Moon("Calypso", 1, 0, "GREY", 295, 32509, current));
-                        current.children.Add(new Moon("Dione", 1, 0, "GREY", 377, 27061, current));
-                        current.children.Add(new Moon("Helene", 1, 0, "GREY", 377, 27061, current));
-                        current.children.Add(new Moon("Rhea", 1, 0, "GREY", 527, 19085, current));
-                        current.children.Add(new Moon("Titan", 1, 0, "GREY", 1222, 15, current));
-                        current.children.Add(new Moon("Hyperion", 1, 0, "GREY", 1481, 21, current));
-                        current.children.Add(new Moon("Iapetus", 1, 0, "GREY", 3561, 79, current));
-                        current.children.Add(new Moon("Phoebe", 1, 0, "GREY", 12952, -550, current));
+                        current.children.Add(new Moon("Pan", 1, 0, "GRAY", 134, 1, current));
+                        current.children.Add(new Moon("Atlas", 1, 0, "GRAY", 138, 1, current));
+                        current.children.Add(new Moon("Prometheus", 1, 0, "GRAY", 139, 1, current));
+                        current.children.Add(new Moon("Pandora", 1, 0, "GRAY", 142, 1, current));
+                        current.children.Add(new Moon("Epimetheus", 1, 0, "GRAY", 151, 1, current));
+                        current.children.Add(new Moon("Janus", 1, 0, "GRAY", 151, 1, current));
+                        current.children.Add(new Moon("Mimas", 1, 0, "GRAY", 186, 1, current));
+                        current.children.Add(new Moon("Enceladus", 1, 0, "GRAY", 238, 13516, current));
+                        current.children.Add(new Moon("Moon", 1, 0, "GRAY", 295, 32509, current));
+                        current.children.Add(new Moon("Telesto", 1, 0, "GRAY", 295, 32509, current));
+                        current.children.Add(new Moon("Calypso", 1, 0, "GRAY", 295, 32509, current));
+                        current.children.Add(new Moon("Dione", 1, 0, "GRAY", 377, 27061, current));
+                        current.children.Add(new Moon("Helene", 1, 0, "GRAY", 377, 27061, current));
+                        current.children.Add(new Moon("Rhea", 1, 0, "GRAY", 527, 19085, current));
+                        current.children.Add(new Moon("Titan", 1, 0, "GRAY", 1222, 15, current));
+                        current.children.Add(new Moon("Hyperion", 1, 0, "GRAY", 1481, 21, current));
+                        current.children.Add(new Moon("Iapetus", 1, 0, "GRAY", 3561, 79, current));
+                        current.children.Add(new Moon("Phoebe", 1, 0, "GRAY", 12952, -550, current));
                         break;
                     case "Uranus":
-                        current.children.Add(new Moon("Cordelia", 1, 0, "GREY", 50, 1, current));
-                        current.children.Add(new Moon("Ophelia", 1, 0, "GREY", 54, 1, current));
-                        current.children.Add(new Moon("Bianca", 1, 0, "GREY", 59, 1, current));
-                        current.children.Add(new Moon("Cressida", 1, 0, "GREY", 62, 1, current));
-                        current.children.Add(new Moon("Desdemona", 1, 0, "GREY", 63, 1, current));
-                        current.children.Add(new Moon("Juliet", 1, 0, "GREY", 64, 1, current));
-                        current.children.Add(new Moon("Portia", 1, 0, "GREY", 66, 1, current));
-                        current.children.Add(new Moon("Rosalind", 1, 0, "GREY", 70, 1, current));
-                        current.children.Add(new Moon("Belinda", 1, 0, "GREY", 75, 1, current));
-                        current.children.Add(new Moon("Puck", 1, 0, "GREY", 86, 1, current));
-                        current.children.Add(new Moon("Miranda", 1, 0, "GREY", 130, 14977, current));
-                        current.children.Add(new Moon("Ariel", 1, 0, "GREY", 191, 19025, current));
-                        current.children.Add(new Moon("Umbriel", 1, 0, "GREY", 266, 41730, current));
-                        current.children.Add(new Moon("Titania", 1, 0, "GREY", 436, 26146, current));
-                        current.children.Add(new Moon("Oberon", 1, 0, "GREY", 583, 13, current));
-                        current.children.Add(new Moon("Caliban", 1, 0, "GREY", 7169, -580, current));
-                        current.children.Add(new Moon("Stephano", 1, 0, "GREY", 7948, -674, current));
-                        current.children.Add(new Moon("Sycorax", 1, 0, "GREY", 12213, -1289, current));
-                        current.children.Add(new Moon("Prospero", 1, 0, "GREY", 16568, -2019, current));
-                        current.children.Add(new Moon("Setebos", 1, 0, "GREY", 17681, -2239, current));
+                        current.children.Add(new Moon("Cordelia", 1, 0, "GRAY", 50, 1, current));
+                        current.children.Add(new Moon("Ophelia", 1, 0, "GRAY", 54, 1, current));
+                        current.children.Add(new Moon("Bianca", 1, 0, "GRAY", 59, 1, current));
+                        current.children.Add(new Moon("Cressida", 1, 0, "GRAY", 62, 1, current));
+                        current.children.Add(new Moon("Desdemona", 1, 0, "GRAY", 63, 1, current));
+                        current.children.Add(new Moon("Juliet", 1, 0, "GRAY", 64, 1, current));
+                        current.children.Add(new Moon("Portia", 1, 0, "GRAY", 66, 1, current));
+                        current.children.Add(new Moon("Rosalind", 1, 0, "GRAY", 70, 1, current));
+                        current.children.Add(new Moon("Belinda", 1, 0, "GRAY", 75, 1, current));
+                        current.children.Add(new Moon("Puck", 1, 0, "GRAY", 86, 1, current));
+                        current.children.Add(new Moon("Miranda", 1, 0, "GRAY", 130, 14977, current));
+                        current.children.Add(new Moon("Ariel", 1, 0, "GRAY", 191, 19025, current));
+                        current.children.Add(new Moon("Umbriel", 1, 0, "GRAY", 266, 41730, current));
+                        current.children.Add(new Moon("Titania", 1, 0, "GRAY", 436, 26146, current));
+                        current.children.Add(new Moon("Oberon", 1, 0, "GRAY", 583, 13, current));
+                        current.children.Add(new Moon("Caliban", 1, 0, "GRAY", 7169, -580, current));
+                        current.children.Add(new Moon("Stephano", 1, 0, "GRAY", 7948, -674, current));
+                        current.children.Add(new Moon("Sycorax", 1, 0, "GRAY", 12213, -1289, current));
+                        current.children.Add(new Moon("Prospero", 1, 0, "GRAY", 16568, -2019, current));
+                        current.children.Add(new Moon("Setebos", 1, 0, "GRAY", 17681, -2239, current));
                         break;
                     case "Neptune":
-                        current.children.Add(new Moon("Naiad", 1, 0, "GREY", 48, 1, current));
-                        current.children.Add(new Moon("Thalassa", 1, 0, "GREY", 50, 1, current));
-                        current.children.Add(new Moon("Despina", 1, 0, "GREY", 53, 1, current));
-                        current.children.Add(new Moon("Galatea", 1, 0, "GREY", 62, 1, current));
-                        current.children.Add(new Moon("Larissa", 1, 0, "GREY", 74, 1, current));
-                        current.children.Add(new Moon("Triton", 1, 0, "GREY", 355, -5, current));
-                        current.children.Add(new Moon("Nereid", 1, 0, "GREY", 5513, 360, current));
+                        current.children.Add(new Moon("Naiad", 1, 0, "GRAY", 48, 1, current));
+                        current.children.Add(new Moon("Thalassa", 1, 0, "GRAY", 50, 1, current));
+                        current.children.Add(new Moon("Despina", 1, 0, "GRAY", 53, 1, current));
+                        current.children.Add(new Moon("Galatea", 1, 0, "GRAY", 62, 1, current));
+                        current.children.Add(new Moon("Larissa", 1, 0, "GRAY", 74, 1, current));
+                        current.children.Add(new Moon("Triton", 1, 0, "GRAY", 355, -5, current));
+                        current.children.Add(new Moon("Nereid", 1, 0, "GRAY", 5513, 360, current));
                         break;
                     case "Pluto":
-                        current.children.Add(new Moon("Charon", 1, 0, "GREY", 20, 14397, current));
-                        current.children.Add(new Moon("Nix", 1, 0, "GREY", 49, 24, current));
-                        current.children.Add(new Moon("Nereid", 1, 0, "GREY", 65, 38, current));
+                        current.children.Add(new Moon("Charon", 1, 0, "GRAY", 20, 14397, current));
+                        current.children.Add(new Moon("Nix", 1, 0, "GRAY", 49, 24, current));
+                        current.children.Add(new Moon("Nereid", 1, 0, "GRAY", 65, 38, current));
                         break;
                     default:
                         break;
