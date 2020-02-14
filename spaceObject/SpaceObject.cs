@@ -27,11 +27,15 @@ namespace SpaceSim
 
         public void calcPos(int time)
         {
-            if (!(this is Star))
+            if (!(this is Star) || !(this is Moon))
             {
                 double orbitalSpeed = (2 * Math.PI * orbitalRadius) / orbitalPeriod;
-                xpos = orbitalRadius + (Math.Cos(time * orbitalSpeed * 3.1416 / 180) * orbitalRadius);
-                ypos = orbitalRadius + (Math.Sin(time * orbitalSpeed * 3.1416 / 180) * orbitalRadius);
+                xpos = (Math.Cos(time * (orbitalSpeed / 2000) * 3.1416 / 180) * orbitalRadius);
+                ypos = (Math.Sin(time * (orbitalSpeed / 2000) * 3.1416 / 180) * orbitalRadius);
+            } else if ((this is Moon)) {
+                double orbitalSpeed = (2 * Math.PI * orbitalRadius) / orbitalPeriod;
+                xpos = (Math.Cos(time * (orbitalSpeed) * 3.1416 / 180) * orbitalRadius);
+                ypos = (Math.Sin(time * (orbitalSpeed) * 3.1416 / 180) * orbitalRadius);
             }
 
         }
@@ -168,20 +172,19 @@ namespace SpaceSim
         
 
         public allSpaceObjects() {
-            objectList.Add(new Star("Sun", 50, 0, "YELLOW"));
-            objectList.Add(new Planet("Earth", 15, 2, "BLUE", 149600, 365, objectList[0]));
+            objectList.Add(new Star("Sun", 30, 0, "YELLOW"));
         }
 
         public void allPlanets() {
-            objectList.Add(new Planet("Mercury", 3, 2, "ORANGE", 57910, 87, objectList[0]));
-            objectList.Add(new Planet("Venus", 3, 2, "BROWN", 108200, 224, objectList[0]));
-            objectList.Add(new Planet("Earth", 3, 2, "BLUE", 149600, 365, objectList[0]));
-            objectList.Add(new Planet("Mars", 4, 24, "RED", 227940, 686, objectList[0]));
-            objectList.Add(new Planet("Jupiter", 10, 500, "BEIGE", 778330, 4332, objectList[0]));
-            objectList.Add(new Planet("Saturn", 10, 500, "BROWN", 1429400, 10759, objectList[0]));
-            objectList.Add(new Planet("Uranus", 10, 500, "GREEN", 2870990, 30685, objectList[0]));
-            objectList.Add(new Planet("Neptune", 10, 500, "BLUE", 4504300, 60190, objectList[0]));
-            objectList.Add(new DwarfPlanet("Pluto", 10, 500, "GRAY", 5913520, 90550, objectList[0]));
+            objectList.Add(new Planet("Mercury", 15, 2, "ORANGE", 57910, 87, objectList[0]));
+            objectList.Add(new Planet("Venus", 15, 2, "BROWN", 108200, 224, objectList[0]));
+            objectList.Add(new Planet("Earth", 15, 2, "BLUE", 149600, 365, objectList[0]));
+            objectList.Add(new Planet("Mars", 20, 24, "RED", 227940, 686, objectList[0]));
+            objectList.Add(new Planet("Jupiter", 20, 500, "BEIGE", 778330, 4332, objectList[0]));
+            objectList.Add(new Planet("Saturn", 20, 500, "BROWN", 1429400, 10759, objectList[0]));
+            objectList.Add(new Planet("Uranus", 20, 500, "GREEN", 2870990, 30685, objectList[0]));
+            objectList.Add(new Planet("Neptune", 20, 500, "BLUE", 4504300, 60190, objectList[0]));
+            objectList.Add(new DwarfPlanet("Pluto", 20, 500, "GRAY", 5913520, 90550, objectList[0]));
         }
 
         public void allMoons()

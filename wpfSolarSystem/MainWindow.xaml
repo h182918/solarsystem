@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:wpfSolarSystem"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Canvas x:Name="myCanvas"></Canvas>
+    <Grid Name="myGrid">
+        <Canvas Background="black" Name="myCanvas"></Canvas>
+        <Grid Width="{Binding ActualWidth, ElementName=myCanvas}" Height="{Binding ActualHeight, ElementName=myCanvas}">
+            
+        </Grid>
     </Grid>
 </Window>

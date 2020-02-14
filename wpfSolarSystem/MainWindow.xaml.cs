@@ -31,11 +31,11 @@ namespace wpfSolarSystem
         {
             InitializeComponent();
             allObjects = new allSpaceObjects();
-            //allObjects.allPlanets();
+            allObjects.allPlanets();
             allObjects.allMoons();
             list = allObjects.objectList;
             t = new System.Windows.Threading.DispatcherTimer(); 
-            t.Interval = new TimeSpan(2000000); 
+            t.Interval = new TimeSpan(2000); 
             t.Tick += t_Tick; 
             t.Start();
             subscribePlanets();
@@ -48,27 +48,44 @@ namespace wpfSolarSystem
             moveIt += makePlanet;
             for (int i = 0; i < list.Count(); i++) {
                 moveIt += list[i].calcPos;
+                if (list[i].children.Count != 0)
+                {
+                    foreach (SpaceObject child in list[i].children)
+                    {
+                        moveIt += child.calcPos;
+                    }
+                }
             }
         }
 
         void makePlanet(int time) {
             ClearCanvasInfo();
-            List<SpaceObject> test = list;
+
             for (int i = 0; i < list.Count(); i++)
             {
-                Ellipse ellipse = makeSpaceObject(list[i].objectRadius, list[i].color);
-                double currentx = list[i].xpos / 10000;
-                double currenty = list[i].ypos / 10000;
-                Canvas.SetLeft(ellipse, currentx);
-                Canvas.SetTop(ellipse,currenty);
-                if (list[i].children.Count != 0)
+
+            double mX = (myCanvas.RenderSize.Width / 2);
+            double mY = (myCanvas.RenderSize.Height / 2);
+            Ellipse ellipse = makeSpaceObject(list[i].objectRadius, list[i].color);
+                if (list[i] is Star)
                 {
-                    foreach (SpaceObject child in list[i].children)
+                    Canvas.SetLeft(ellipse, mX - list[i].objectRadius/2);
+                    Canvas.SetTop(ellipse, mY - list[i].objectRadius/2);
+                }
+                else {
+                    double currentx = (mX - list[i].objectRadius / 2) + list[i].xpos / (150 * (Math.Pow(i, 2)));
+                    double currenty = (mY - list[i].objectRadius / 2) + list[i].ypos / (150 * (Math.Pow(i, 2)));
+                    Canvas.SetLeft(ellipse, currentx);
+                    Canvas.SetTop(ellipse, currenty);
+                    if (list[i].children.Count != 0)
                     {
-                        Ellipse childEllipse = makeSpaceObject(child.objectRadius, child.color);
-                        Canvas.SetLeft(childEllipse, currentx + (child.xpos / 10000));
-                        Canvas.SetTop(childEllipse, currenty + (child.ypos / 10000));
-                        myCanvas.Children.Add(childEllipse);
+                        foreach (SpaceObject child in list[i].children)
+                        {
+                            Ellipse childEllipse = makeSpaceObject(child.objectRadius, child.color);
+                            Canvas.SetLeft(childEllipse, (child.xpos / (150 * (Math.Pow(i, 2)))) + currentx);
+                            Canvas.SetTop(childEllipse, (child.ypos / (150 * (Math.Pow(i, 2)))) + currenty);
+                            myCanvas.Children.Add(childEllipse);
+                        }
                     }
                 }
                 myCanvas.Children.Add(ellipse);
